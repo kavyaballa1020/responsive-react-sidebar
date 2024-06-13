@@ -1,17 +1,15 @@
+/* src/App.css */
 .App {
   font-family: Arial, sans-serif;
 }
 
 .content {
   margin-left: 250px;
-  padding: 16px;
-  transition: margin-left 0.3s;
+  padding: 20px;
 }
 
-.sidebar.open + .content {
-  margin-left: 250px;
-}
-
-.sidebar:not(.open) + .content {
-  margin-left: 0;
+@media screen and (max-width: 768px) {
+  .content {
+      margin-left: 0;
+  }
 }
