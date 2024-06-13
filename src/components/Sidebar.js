@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Sidebar.css';
 import { FiHome, FiLayers, FiBook, FiPhone, FiSettings, FiUser } from 'react-icons/fi';
+import { AiFillFire } from 'react-icons/ai';
 
 const Sidebar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +18,7 @@ const Sidebar = () => {
     return (
         <div className={`sidebar ${isOpen ? 'open' : ''} ${isDarkMode ? 'dark' : 'light'}`}>
             <div className="brand-name">
-                Kavya Services
+             <AiFillFire />   Kav Services
             </div>
             <button className="toggle-button" onClick={toggleSidebar}>
                 ☰
