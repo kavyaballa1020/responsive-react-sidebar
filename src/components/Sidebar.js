@@ -10,8 +10,8 @@ function App() {
   };
 
   return (
-    <div className={`app ${isOpen ? 'open' : 'closed'}`}>
-      <div className="sidebar">
+    <div className="app">
+      <div className={`sidebar ${isOpen ? '' : 'collapsed'}`}>
         <div className="sidebar-header">
           <h3>SideBar</h3>
           <button className="sidebar-toggle" onClick={toggleSidebar}>
@@ -19,22 +19,22 @@ function App() {
           </button>
         </div>
         <ul className="sidebar-menu">
-          <li className={isOpen ? 'sidebar-menu-item' : 'sidebar-menu-item icon-only'}>
+          <li>
             {isOpen ? <><FaHome /> Home</> : <FaHome />}
           </li>
-          <li className={isOpen ? 'sidebar-menu-item' : 'sidebar-menu-item icon-only'}>
+          <li>
             {isOpen ? <><FaUser /> About</> : <FaUser />}
           </li>
-          <li className={isOpen ? 'sidebar-menu-item' : 'sidebar-menu-item icon-only'}>
+          <li>
             {isOpen ? <><FaLaptopCode /> Services</> : <FaLaptopCode />}
           </li>
-          <li className={isOpen ? 'sidebar-menu-item' : 'sidebar-menu-item icon-only'}>
+          <li>
             {isOpen ? <><FaChartBar /> Case Studies</> : <FaChartBar />}
           </li>
-          <li className={isOpen ? 'sidebar-menu-item' : 'sidebar-menu-item icon-only'}>
+          <li>
             {isOpen ? <><FaBlog /> Blog</> : <FaBlog />}
           </li>
-          <li className={isOpen ? 'sidebar-menu-item' : 'sidebar-menu-item icon-only'}>
+          <li>
             {isOpen ? <><FaEnvelope /> Contact</> : <FaEnvelope />}
           </li>
         </ul>

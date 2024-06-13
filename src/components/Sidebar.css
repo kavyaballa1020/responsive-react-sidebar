@@ -3,16 +3,16 @@
 }
 
 .sidebar {
-  width: 250px;
+  width: 250px; /* Initial width of the sidebar */
   height: 100vh;
   background-color: #333;
   color: #fff;
-  transition: transform 0.3s ease;
-  transform: translateX(0);
+  overflow: hidden; /* Ensure content doesn't overflow when collapsed */
+  transition: width 0.3s ease; /* Transition width for smooth animation */
 }
 
-.app.closed .sidebar {
-  transform: translateX(-250px);
+.sidebar.collapsed {
+  width: 70px; /* Width when collapsed */
 }
 
 .sidebar-header {
@@ -36,16 +36,25 @@
   margin: 0;
 }
 
-.sidebar-menu-item {
+.sidebar-menu li {
   padding: 1rem;
   cursor: pointer;
 }
 
-.sidebar-menu-item.icon-only {
+.sidebar-menu li svg {
+  margin-right: 10px;
+}
+
+.sidebar-menu li.icon-only {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.sidebar-menu li.icon-only svg {
+  margin-right: 0; /* Remove margin for icons */
 }
 
 .content {
