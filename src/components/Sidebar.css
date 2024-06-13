@@ -92,16 +92,18 @@
 }
 
 .theme-toggle {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  cursor: pointer;
-  padding: 8px;
-  background-color: #ffffff; /* Toggle button background color */
-  color: white; /* Toggle button text color */
+  background: none;
   border: none;
-  outline: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #ffffff; /* Adjust color as needed */
+  padding: 10px;
 }
+
+.theme-toggle:hover {
+  color: #e5ff00; /* Adjust hover color as needed */
+}
+
 
 .dark {
   background-color: #000000; /* Dark mode background color */
