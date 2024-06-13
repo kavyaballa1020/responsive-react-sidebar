@@ -1,8 +1,8 @@
 // Sidebar.js
-
 import React, { useState } from 'react';
 import './Sidebar.css';
 import { FiHome, FiLayers, FiBook, FiPhone, FiSettings, FiUser } from 'react-icons/fi';
+import { AiFillFire,AiOutlineMoon,AiOutlineSun   } from 'react-icons/ai';
 
 const Sidebar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -24,6 +24,12 @@ const Sidebar = () => {
             <button className="toggle-button" onClick={toggleSidebar}>
                 ☰
             </button>
+            <button className="theme-toggle" onClick={toggleTheme}>
+                {isDarkMode ? <AiOutlineMoon /> : <AiOutlineSun />}
+            </button>
+            <div className="brand-name">
+                <AiFillFire />Kavya Services
+            </div>
             <nav className="nav-menu">
                 <a href="#home"><FiHome /> Home</a>
                 <a href="#about"><FiUser /> About</a>
@@ -41,15 +47,8 @@ const Sidebar = () => {
                     <p>Web Developer</p>
                 </div>
             </div>
-            <div className="brand-name">
-                Kavya Services
-            </div>
-            <label className="ui-switch">
-                <input type="checkbox" onChange={toggleTheme} />
-                <div className="slider">
-                    <div className="circle"></div>
-                </div>
-            </label>
+          
+        
         </div>
     );
 };
