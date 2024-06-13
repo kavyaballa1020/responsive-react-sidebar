@@ -16,9 +16,11 @@ const Sidebar = () => {
             </button>
             <nav className="nav-menu">
                 <a href="#home"><FiHome /> Home</a>
-                <a href="#services"><FiBell /> Services</a>
                 <a href="#about"><FiUser /> About</a>
-                <a href="#contact"><FiGrid /> Contact</a>
+                <a href="#services">Database</a>
+                <a href="#case-studies">Case Studies</a>
+                <a href='#blog'>Blog</a>
+                <a href="#contact">Contact</a>
             </nav>
         </div>
     );
