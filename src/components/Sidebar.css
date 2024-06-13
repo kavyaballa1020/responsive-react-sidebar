@@ -23,7 +23,7 @@
   color: white;
   background: none;
   border: none;
-  z-index: 1001; /* Ensure button is on top */
+  z-index: 1001; 
 }
 
 .nav-menu {
@@ -54,7 +54,7 @@
 }
 
 .profile-picture {
-  width: 60px; /* Adjust size as needed */
+  width: 60px; 
   height: 60px;
   border-radius: 50%;
   overflow: hidden;
