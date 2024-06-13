@@ -1,4 +1,3 @@
-// Sidebar.js
 import React, { useState } from 'react';
 import './Sidebar.css';
 import { FiHome, FiLayers, FiBook, FiPhone, FiSettings, FiUser } from 'react-icons/fi';
@@ -30,12 +29,12 @@ const Sidebar = () => {
                 <AiFillFire />Kavya Services
             </div>
             <nav className={`nav-menu ${isOpen ? 'open' : ''}`}>
-                <a href="#home"><FiHome /> Home</a>
-                <a href="#about"><FiUser /> About</a>
-                <a href="#services"><FiSettings /> Services</a>
-                <a href="#case-studies"><FiLayers /> Case Studies</a>
-                <a href='#blog'><FiBook /> Blog</a>
-                <a href="#contact"><FiPhone /> Contact</a>
+                <a href="#home"><FiHome /> {isOpen && 'Home'}</a>
+                <a href="#about"><FiUser /> {isOpen && 'About'}</a>
+                <a href="#services"><FiSettings /> {isOpen && 'Services'}</a>
+                <a href="#case-studies"><FiLayers /> {isOpen && 'Case Studies'}</a>
+                <a href='#blog'><FiBook /> {isOpen && 'Blog'}</a>
+                <a href="#contact"><FiPhone /> {isOpen && 'Contact'}</a>
             </nav>
             <div className={`profile-section ${isOpen ? 'open' : ''}`}>
                 <div className="profile-picture">
