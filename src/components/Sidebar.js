@@ -13,9 +13,11 @@ const Sidebar = () => {
     };
 
     const toggleTheme = () => {
-        setIsDarkMode(!isDarkMode);
-        document.documentElement.classList.toggle('dark', isDarkMode); // Toggle 'dark' class on root element
+        const newMode = !isDarkMode;
+        setIsDarkMode(newMode);
+        document.documentElement.classList.toggle('dark', newMode);
     };
+    
 
     return (
         <div className={`sidebar ${isOpen ? 'open' : ''}`}>
