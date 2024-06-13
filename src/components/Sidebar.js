@@ -1,25 +1,24 @@
+// Sidebar.js
+
 import React, { useState } from 'react';
 import './Sidebar.css';
 import { FiHome, FiLayers, FiBook, FiPhone, FiSettings, FiUser } from 'react-icons/fi';
-import { AiFillFire } from 'react-icons/ai';
 
 const Sidebar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [isDarkMode, setIsDarkMode] = useState(false); // State for dark mode
+    const [isDarkMode, setIsDarkMode] = useState(false);
 
     const toggleSidebar = () => {
         setIsOpen(!isOpen);
     };
 
-    const toggleDarkMode = () => {
+    const toggleTheme = () => {
         setIsDarkMode(!isDarkMode);
+        document.documentElement.classList.toggle('dark', isDarkMode); // Toggle 'dark' class on root element
     };
 
     return (
-        <div className={`sidebar ${isOpen ? 'open' : ''} ${isDarkMode ? 'dark' : 'light'}`}>
-            <div className="brand-name">
-             <AiFillFire />   Kav Services
-            </div>
+        <div className={`sidebar ${isOpen ? 'open' : ''}`}>
             <button className="toggle-button" onClick={toggleSidebar}>
                 ☰
             </button>
@@ -40,9 +39,15 @@ const Sidebar = () => {
                     <p>Web Developer</p>
                 </div>
             </div>
-            <button className="theme-toggle" onClick={toggleDarkMode}>
-                {isDarkMode ? 'Light Mode' : 'Dark Mode'}
-            </button>
+            <div className="brand-name">
+                Kavya Services
+            </div>
+            <label className="ui-switch">
+                <input type="checkbox" onChange={toggleTheme} />
+                <div className="slider">
+                    <div className="circle"></div>
+                </div>
+            </label>
         </div>
     );
 };
