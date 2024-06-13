@@ -39,6 +39,8 @@
 .sidebar-menu li {
   padding: 1rem;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .sidebar-menu li svg {
@@ -46,11 +48,8 @@
 }
 
 .sidebar-menu li.icon-only {
-  display: flex;
   justify-content: center;
-  align-items: center;
   padding: 1rem;
-  white-space: nowrap; /* Prevents text from wrapping */
 }
 
 .sidebar-menu li.icon-only svg {

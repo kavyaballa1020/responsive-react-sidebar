@@ -13,7 +13,7 @@ function App() {
     <div className="app">
       <div className={`sidebar ${isOpen ? '' : 'collapsed'}`}>
         <div className="sidebar-header">
-          <h3>SideBar</h3>
+          <h2>{isOpen ? 'Kav-Services' : ''}</h2>
           <button className="sidebar-toggle" onClick={toggleSidebar}>
             {isOpen ? <FaTimes /> : <FaBars />}
           </button>
