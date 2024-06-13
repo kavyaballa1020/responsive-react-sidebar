@@ -13,7 +13,7 @@ function App() {
     <div className="app">
       <div className={`sidebar ${isOpen ? '' : 'collapsed'}`}>
         <div className="sidebar-header">
-          <h2>{isOpen ? 'Kav-Services' : ''}</h2>
+          <h3>{isOpen ? 'SideBar' : <FaBars />}</h3>
           <button className="sidebar-toggle" onClick={toggleSidebar}>
             {isOpen ? <FaTimes /> : <FaBars />}
           </button>
@@ -38,6 +38,17 @@ function App() {
             {isOpen ? <><FaEnvelope /> Contact</> : <FaEnvelope />}
           </li>
         </ul>
+        <div className="profile-section">
+          <img
+            className="profile-picture"
+            src="https://via.placeholder.com/150"
+            alt="Profile"
+          />
+          <div className="profile-details">
+            <p className="profile-name">John Doe</p>
+            <p className="profile-role">Frontend Developer</p>
+          </div>
+        </div>
       </div>
       <div className="content">
         <h1>Main Content Area</h1>
