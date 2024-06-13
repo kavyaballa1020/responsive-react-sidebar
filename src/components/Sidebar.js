@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaHome, FaUser, FaLaptopCode, FaChartBar, FaBlog, FaEnvelope } from 'react-icons/fa';
 import './Sidebar.css';
 
 function App() {
@@ -19,13 +19,24 @@ function App() {
           </button>
         </div>
         <ul className="sidebar-menu">
-          <li>Home</li>
-          <li>About</li>
-          <li>Services</li>
-          <li>Case Studies</li>
-          <li>Blog</li>
-          <li>Contact</li>
-
+          <li className={isOpen ? 'sidebar-menu-item' : 'sidebar-menu-item icon-only'}>
+            {isOpen ? <><FaHome /> Home</> : <FaHome />}
+          </li>
+          <li className={isOpen ? 'sidebar-menu-item' : 'sidebar-menu-item icon-only'}>
+            {isOpen ? <><FaUser /> About</> : <FaUser />}
+          </li>
+          <li className={isOpen ? 'sidebar-menu-item' : 'sidebar-menu-item icon-only'}>
+            {isOpen ? <><FaLaptopCode /> Services</> : <FaLaptopCode />}
+          </li>
+          <li className={isOpen ? 'sidebar-menu-item' : 'sidebar-menu-item icon-only'}>
+            {isOpen ? <><FaChartBar /> Case Studies</> : <FaChartBar />}
+          </li>
+          <li className={isOpen ? 'sidebar-menu-item' : 'sidebar-menu-item icon-only'}>
+            {isOpen ? <><FaBlog /> Blog</> : <FaBlog />}
+          </li>
+          <li className={isOpen ? 'sidebar-menu-item' : 'sidebar-menu-item icon-only'}>
+            {isOpen ? <><FaEnvelope /> Contact</> : <FaEnvelope />}
+          </li>
         </ul>
       </div>
       <div className="content">

@@ -11,7 +11,7 @@
   transform: translateX(0);
 }
 
-.sidebar.closed {
+.app.closed .sidebar {
   transform: translateX(-250px);
 }
 
@@ -36,9 +36,16 @@
   margin: 0;
 }
 
-.sidebar-menu li {
+.sidebar-menu-item {
   padding: 1rem;
   cursor: pointer;
+}
+
+.sidebar-menu-item.icon-only {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 
 .content {
