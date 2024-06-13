@@ -24,7 +24,7 @@ const Sidebar = () => {
             </nav>
             <div className="profile-section">
                 <div className="profile-picture">
-                    <img src="K.jpg" alt="Profile" />
+                <img src={process.env.PUBLIC_URL + '/Kavya.JPG'} alt="Profile" />
                 </div>
                 <div className="profile-info">
                     <h3>Kavya Balla</h3>
