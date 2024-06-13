@@ -1,4 +1,3 @@
-// src/components/Sidebar.js
 import React, { useState } from 'react';
 import './Sidebar.css';
 

@@ -4,11 +4,11 @@
   width: 250px;
   position: fixed;
   top: 0;
-  left: -250px;
   background-color: #111;
   transition: 0.3s;
   overflow-x: hidden;
   padding-top: 60px;
+  z-index: 1000; 
 }
 
 .sidebar.open {
@@ -22,6 +22,14 @@
   font-size: 30px;
   cursor: pointer;
   color: white;
+  background: none;
+  border: none;
+  z-index: 1001; /* Ensure button is on top */
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
 }
 
 .nav-menu a {
@@ -38,5 +46,7 @@
 }
 
 @media screen and (max-height: 450px) {
-  .nav-menu a {font-size: 18px;}
+  .nav-menu a {
+      font-size: 18px;
+  }
 }
