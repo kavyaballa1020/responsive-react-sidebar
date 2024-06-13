@@ -17,24 +17,29 @@ const Sidebar = () => {
         document.documentElement.classList.toggle('dark', newMode);
     };
 
+    const handleNavLinkClick = () => {
+        // Optionally close sidebar when a nav link is clicked
+        // setIsOpen(false);
+    };
+
     return (
         <div className={`sidebar ${isOpen ? 'open' : ''}`}>
             <button className="toggle-button" onClick={toggleSidebar}>
-                ☰
+                {isOpen ? '☰' : '☰'}
             </button>
             <button className="theme-toggle" onClick={toggleTheme}>
                 {isDarkMode ? <AiOutlineMoon /> : <AiOutlineSun />}
             </button>
             <div className="brand-name">
-                <AiFillFire />Kavya Services
+                <AiFillFire /> Kavya Services
             </div>
             <nav className={`nav-menu ${isOpen ? 'open' : ''}`}>
-                <a href="#home"><FiHome /> {isOpen && 'Home'}</a>
-                <a href="#about"><FiUser /> {isOpen && 'About'}</a>
-                <a href="#services"><FiSettings /> {isOpen && 'Services'}</a>
-                <a href="#case-studies"><FiLayers /> {isOpen && 'Case Studies'}</a>
-                <a href='#blog'><FiBook /> {isOpen && 'Blog'}</a>
-                <a href="#contact"><FiPhone /> {isOpen && 'Contact'}</a>
+                <a href="#home" onClick={handleNavLinkClick}><FiHome /> {isOpen && 'Home'}</a>
+                <a href="#about" onClick={handleNavLinkClick}><FiUser /> {isOpen && 'About'}</a>
+                <a href="#services" onClick={handleNavLinkClick}><FiSettings /> {isOpen && 'Services'}</a>
+                <a href="#case-studies" onClick={handleNavLinkClick}><FiLayers /> {isOpen && 'Case Studies'}</a>
+                <a href='#blog' onClick={handleNavLinkClick}><FiBook /> {isOpen && 'Blog'}</a>
+                <a href="#contact" onClick={handleNavLinkClick}><FiPhone /> {isOpen && 'Contact'}</a>
             </nav>
             <div className={`profile-section ${isOpen ? 'open' : ''}`}>
                 <div className="profile-picture">
