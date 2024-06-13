@@ -1,125 +1,47 @@
+.app {
+  display: flex;
+}
+
 .sidebar {
-  height: 100%;
   width: 250px;
-  position: fixed;
-  top: 0;
-  background-color: rgb(0, 0, 0);
-  transition: 0.3s;
-  overflow-x: hidden;
-  padding-top: 60px;
-  z-index: 1000;
+  height: 100vh;
+  background-color: #333;
+  color: #fff;
+  transition: transform 0.3s ease;
+  transform: translateX(0);
 }
 
-.sidebar.open {
-  left: 0; /* Moved to 0 when open */
+.sidebar.closed {
+  transform: translateX(-250px);
 }
 
-/* Rest of your CSS remains the same */
-
-
-.toggle-button {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 30px;
-    cursor: pointer;
-    color: white;
-    background: none;
-    border: none;
-    z-index: 1001; 
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
 }
 
-.theme-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
-    color: #ffffff; /* Adjust color as needed */
-    padding: 10px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
+.sidebar-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
-.theme-toggle:hover {
-    color: #e5ff00; /* Adjust hover color as needed */
+.sidebar-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
-.brand-name {
-    font-size: 24px;
-    font-weight: 700;
-    text-align: center;
-    padding: 10px 0;
-    margin: auto;
-    color: rgb(251, 255, 0);
-    box-shadow: 1px 2px 2px 1px rgb(255, 255, 255);
+.sidebar-menu li {
+  padding: 1rem;
+  cursor: pointer;
 }
 
-.nav-menu {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    height: 0;
-    transition: height 0.3s ease;
-}
-
-.nav-menu.open {
-    height: auto;
-}
-
-.nav-menu a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: white;
-    display: flex;
-    align-items: center;
-    transition: 0.3s;
-}
-
-.nav-menu a:hover {
-    color: #f1f1f1;
-}
-
-.profile-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 200px;
-    border-top: 1px solid white;
-    padding: 20px;
-    transition: margin-top 0.3s ease;
-}
-
-.profile-section.open {
-    margin-top: 20px;
-}
-
-.profile-picture {
-    width: 60px; 
-    height: 60px;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.profile-picture img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.profile-info {
-    margin-left: 15px;
-    color: white;
-}
-
-.profile-info h3 {
-    margin: 0;
-    font-size: 20px;
-}
-
-.profile-info p {
-    margin: 0;
-    font-size: 16px;
-    opacity: 0.7;
+.content {
+  flex: 1;
+  padding: 20px;
 }
