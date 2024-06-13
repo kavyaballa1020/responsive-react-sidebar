@@ -1,3 +1,5 @@
+/* Sidebar.css */
+
 .sidebar {
   height: 100%;
   width: 250px;
@@ -26,9 +28,42 @@
   z-index: 1001; 
 }
 
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #ffffff; /* Adjust color as needed */
+  padding: 10px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.theme-toggle:hover {
+  color: #e5ff00; /* Adjust hover color as needed */
+}
+
+.brand-name {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  padding: 10px 0;
+  margin: auto;
+  color: rgb(251, 255, 0);
+  box-shadow: 1px 2px 2px 1px rgb(255, 255, 255);
+}
+
 .nav-menu {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  height: 0;
+  transition: height 0.3s ease;
+}
+
+.nav-menu.open {
+  height: auto;
 }
 
 .nav-menu a {
@@ -36,7 +71,8 @@
   text-decoration: none;
   font-size: 25px;
   color: white;
-  display: block;
+  display: flex;
+  align-items: center;
   transition: 0.3s;
 }
 
@@ -51,6 +87,11 @@
   margin-top: 200px;
   border-top: 1px solid white;
   padding: 20px;
+  transition: margin-top 0.3s ease;
+}
+
+.profile-section.open {
+  margin-top: 20px;
 }
 
 .profile-picture {
@@ -80,37 +121,4 @@
   margin: 0;
   font-size: 16px;
   opacity: 0.7;
-}
-.brand-name {
-  font-size: 24px;
-  font-weight:700;
-  text-align: center;
-  padding: 10px 0;
-  margin: auto;
-  color: rgb(251, 255, 0);
-  box-shadow:1px 2px 2px 1px rgb(255, 255, 255);
-}
-
-.theme-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 20px;
-  color: #ffffff; /* Adjust color as needed */
-  padding: 10px;
-}
-
-.theme-toggle:hover {
-  color: #e5ff00; /* Adjust hover color as needed */
-}
-
-
-.dark {
-  background-color: #000000; /* Dark mode background color */
-  color: rgb(255, 255, 255); /* Dark mode text color */
-}
-
-.light {
-  background-color: #ffffff; /* Light mode background color */
-  color: black; /* Light mode text color */
 }
