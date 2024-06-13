@@ -4,13 +4,21 @@ import { FiHome, FiLayers, FiBook, FiPhone, FiSettings, FiUser } from 'react-ico
 
 const Sidebar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(false); // State for dark mode
 
     const toggleSidebar = () => {
         setIsOpen(!isOpen);
     };
 
+    const toggleDarkMode = () => {
+        setIsDarkMode(!isDarkMode);
+    };
+
     return (
-        <div className={`sidebar ${isOpen ? 'open' : ''}`}>
+        <div className={`sidebar ${isOpen ? 'open' : ''} ${isDarkMode ? 'dark' : 'light'}`}>
+            <div className="brand-name">
+                Kavya Services
+            </div>
             <button className="toggle-button" onClick={toggleSidebar}>
                 ☰
             </button>
@@ -24,13 +32,16 @@ const Sidebar = () => {
             </nav>
             <div className="profile-section">
                 <div className="profile-picture">
-                <img src={process.env.PUBLIC_URL + '/Kavya.JPG'} alt="Profile" />
+                    <img src={process.env.PUBLIC_URL + '/Kavya.JPG'} alt="Profile" />
                 </div>
                 <div className="profile-info">
                     <h3>Kavya Balla</h3>
                     <p>Web Developer</p>
                 </div>
             </div>
+            <button className="theme-toggle" onClick={toggleDarkMode}>
+                {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+            </button>
         </div>
     );
 };
