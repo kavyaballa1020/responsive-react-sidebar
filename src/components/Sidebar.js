@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Sidebar.css';
-import { FiHome, FiBell, FiUser, FiGrid } from 'react-icons/fi';
+import { FiHome, FiLayers, FiBook, FiPhone, FiSettings, FiUser } from 'react-icons/fi';
 
 const Sidebar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -17,14 +17,22 @@ const Sidebar = () => {
             <nav className="nav-menu">
                 <a href="#home"><FiHome /> Home</a>
                 <a href="#about"><FiUser /> About</a>
-                <a href="#services">Database</a>
-                <a href="#case-studies">Case Studies</a>
-                <a href='#blog'>Blog</a>
-                <a href="#contact">Contact</a>
+                <a href="#services"><FiSettings /> Services</a>
+                <a href="#case-studies"><FiLayers /> Case Studies</a>
+                <a href='#blog'><FiBook /> Blog</a>
+                <a href="#contact"><FiPhone /> Contact</a>
             </nav>
+            <div className="profile-section">
+                <div className="profile-picture">
+                    <img src="K.jpg" alt="Profile" />
+                </div>
+                <div className="profile-info">
+                    <h3>Kavya Balla</h3>
+                    <p>Web Developer</p>
+                </div>
+            </div>
         </div>
     );
 };
 
 export default Sidebar;
-
