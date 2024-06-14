@@ -4,7 +4,7 @@ import './Sidebar.css';
 import { AiFillFire } from 'react-icons/ai';
 
 function App() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false); 
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -12,9 +12,9 @@ function App() {
 
   return (
     <div className="app">
-      <div className={`sidebar ${isOpen ? '' : 'collapsed'}`}>
+      <div className={`sidebar ${isOpen ? 'open' : 'collapsed'}`}>
         <div className="sidebar-header">
-          <h2>{isOpen ? <> <AiFillFire />Kav-Services</> : ''}</h2>
+          <h2>{isOpen ? <> <AiFillFire />Kav-Connect</> : ''}</h2>
           <button className="sidebar-toggle" onClick={toggleSidebar}>
             {isOpen ? <FaTimes /> : <FaBars />}
           </button>
@@ -23,50 +23,80 @@ function App() {
           <li>
             <a href="#" className="menu-item">
               <FaHome />
-              {isOpen && <span>Home</span>}
-              {!isOpen && <span className="tooltip">Home</span>}
+              {isOpen && <span className="menu-text">Home</span>}
+              {!isOpen && (
+                <span className="tooltip">
+                  <span className="tooltip-icon"><FaHome /></span>
+                  Home
+                </span>
+              )}
             </a>
           </li>
           <li>
             <a href="#" className="menu-item">
               <FaUser />
-              {isOpen && <span>About</span>}
-              {!isOpen && <span className="tooltip">About</span>}
+              {isOpen && <span className="menu-text">About</span>}
+              {!isOpen && (
+                <span className="tooltip">
+                  <span className="tooltip-icon"><FaUser /></span>
+                  About
+                </span>
+              )}
             </a>
           </li>
           <li>
             <a href="#" className="menu-item">
               <FaLaptopCode />
-              {isOpen && <span>Services</span>}
-              {!isOpen && <span className="tooltip">Services</span>}
+              {isOpen && <span className="menu-text">Services</span>}
+              {!isOpen && (
+                <span className="tooltip">
+                  <span className="tooltip-icon"><FaLaptopCode /></span>
+                  Services
+                </span>
+              )}
             </a>
           </li>
           <li>
             <a href="#" className="menu-item">
               <FaChartBar />
-              {isOpen && <span>Case Studies</span>}
-              {!isOpen && <span className="tooltip">Case Studies</span>}
+              {isOpen && <span className="menu-text">Case Studies</span>}
+              {!isOpen && (
+                <span className="tooltip">
+                  <span className="tooltip-icon"><FaChartBar /></span>
+                  Case Studies
+                </span>
+              )}
             </a>
           </li>
           <li>
             <a href="#" className="menu-item">
               <FaBlog />
-              {isOpen && <span>Blog</span>}
-              {!isOpen && <span className="tooltip">Blog</span>}
+              {isOpen && <span className="menu-text">Blog</span>}
+              {!isOpen && (
+                <span className="tooltip">
+                  <span className="tooltip-icon"><FaBlog /></span>
+                  Blog
+                </span>
+              )}
             </a>
           </li>
           <li>
             <a href="#" className="menu-item">
               <FaEnvelope />
-              {isOpen && <span>Contact</span>}
-              {!isOpen && <span className="tooltip">Contact</span>}
+              {isOpen && <span className="menu-text">Contact</span>}
+              {!isOpen && (
+                <span className="tooltip">
+                  <span className="tooltip-icon"><FaEnvelope /></span>
+                  Contact
+                </span>
+              )}
             </a>
           </li>
         </ul>
         <div className="profile-section">
           <img
             className="profile-picture"
-            src={`${process.env.PUBLIC_URL}/Kavya.JPG`} // Replace with your actual image path
+            src={`${process.env.PUBLIC_URL}/Kavya.JPG`} 
             alt="Profile"
           />
           {isOpen && (
