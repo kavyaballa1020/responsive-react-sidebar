@@ -14,7 +14,7 @@ h2 {
   background-repeat: no-repeat;
   background-size: cover;
   font-size: 18px;
-  overflow: visible; 
+  overflow: hidden; 
   transition: width 0.3s ease;
   position: relative;
   z-index: 1; 
@@ -56,9 +56,7 @@ h2 {
   text-decoration: none;
   color: #fff;
   transition: background-color 0.3s;
-  width: 60%;
-  margin-left: 10px;
-  border-radius: 15px;
+  width: 100%;
 }
 
 .sidebar-menu li a .menu-text {
@@ -91,18 +89,6 @@ h2 {
   align-items: center;
 }
 
-.sidebar li .tooltip .tooltip-icon {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background-color: #fff;
-  color: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 5px;
-}
-
 .sidebar.collapsed li:hover .tooltip {
   opacity: 1;
   pointer-events: auto;
@@ -113,11 +99,19 @@ h2 {
 }
 
 .profile-section {
+  position: fixed;
+  bottom: 1rem;
+  left: 0;
+  width: 70px;
+  padding: 1rem;
   display: flex;
   align-items: center;
-  padding: 1rem;
-  margin-top: 110px;
   border-top: 1px solid #ffffff;
+  transition: width 0.3s ease;
+}
+
+.sidebar.open .profile-section {
+  width: 250px;
 }
 
 .profile-picture {
@@ -128,6 +122,10 @@ h2 {
 }
 
 .profile-details {
+  display: none;
+}
+
+.sidebar.open .profile-details {
   display: flex;
   flex-direction: column;
 }
@@ -142,6 +140,7 @@ h2 {
   font-size: 1rem;
   color: #ffffff;
 }
+
 @media (max-width: 768px) {
   .app {
     display: flex;
@@ -160,6 +159,7 @@ h2 {
   .sidebar.open {
     width: 250px;
   }
+  
   .sidebar-menu li a {
     display: flex;
     align-items: center;
@@ -167,9 +167,7 @@ h2 {
     text-decoration: none;
     color: #fff;
     transition: background-color 0.3s;
-    width: 50%;
-    margin-left: 10px;
-    border-radius: 15px;
+    width: 100%;
   }
   
   .sidebar-menu li a .menu-text {
@@ -180,9 +178,15 @@ h2 {
     background-color: rgb(255, 255, 255);
     color: black;
   }
+  
   .profile-section {
-    margin-bottom: 20px;
+    width: 70px;
   }
+
+  .sidebar.open .profile-section {
+    width: 250px;
+  }
+  
   .profile-name {
     font-size: 1.0rem;
   }
@@ -191,6 +195,7 @@ h2 {
     font-size: 0.6rem;
   }
 }
+
 @media (max-width: 480px) {
   .app {
     display: flex;
@@ -204,9 +209,19 @@ h2 {
   .sidebar {
     font-size: 16px;
   }
+  
   .sidebar.open {
     width: 350px;
-  }  
+  }
+
+  .profile-section {
+    width: 70px;
+  }
+
+  .sidebar.open .profile-section {
+    width: 350px;
+  }
+  
   .profile-name {
     font-size: 0.9rem;
     font-weight: bold;
