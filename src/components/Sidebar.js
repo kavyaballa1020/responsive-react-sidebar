@@ -4,7 +4,7 @@ import './Sidebar.css';
 import { AiFillFire } from 'react-icons/ai';
 
 function App() {
-  const [isOpen, setIsOpen] = useState(false); 
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -14,7 +14,7 @@ function App() {
     <div className="app">
       <div className={`sidebar ${isOpen ? 'open' : 'collapsed'}`}>
         <div className="sidebar-header">
-          <h2>{isOpen ? <> <AiFillFire />Kav-Connect</> : ''}</h2>
+          <h3>{isOpen ?'' : ''}</h3>
           <button className="sidebar-toggle" onClick={toggleSidebar}>
             {isOpen ? <FaTimes /> : <FaBars />}
           </button>
@@ -58,18 +58,6 @@ function App() {
           </li>
           <li>
             <a href="#" className="menu-item">
-              <FaChartBar />
-              {isOpen && <span className="menu-text">Case Studies</span>}
-              {!isOpen && (
-                <span className="tooltip">
-                  <span className="tooltip-icon"><FaChartBar /></span>
-                  Case Studies
-                </span>
-              )}
-            </a>
-          </li>
-          <li>
-            <a href="#" className="menu-item">
               <FaBlog />
               {isOpen && <span className="menu-text">Blog</span>}
               {!isOpen && (
@@ -96,7 +84,7 @@ function App() {
         <div className="profile-section">
           <img
             className="profile-picture"
-            src={`${process.env.PUBLIC_URL}/Kavya.JPG`} 
+            src={`${process.env.PUBLIC_URL}/Kavya.JPG`}
             alt="Profile"
           />
           {isOpen && (
