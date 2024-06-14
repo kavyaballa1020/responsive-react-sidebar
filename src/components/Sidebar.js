@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes, FaHome, FaUser, FaLaptopCode, FaChartBar, FaBlog, FaEnvelope } from 'react-icons/fa';
 import './Sidebar.css';
+import { AiFillFire } from 'react-icons/ai';
 
 function App() {
   const [isOpen, setIsOpen] = useState(true);
@@ -13,41 +14,67 @@ function App() {
     <div className="app">
       <div className={`sidebar ${isOpen ? '' : 'collapsed'}`}>
         <div className="sidebar-header">
-          <h3>{isOpen ? 'SideBar' : <FaBars />}</h3>
+          <h2>{isOpen ? <> <AiFillFire />Kav-Services</> : ''}</h2>
           <button className="sidebar-toggle" onClick={toggleSidebar}>
             {isOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>
         <ul className="sidebar-menu">
           <li>
-            {isOpen ? <><FaHome /> Home</> : <FaHome />}
+            <a href="#" className="menu-item">
+              <FaHome />
+              {isOpen && <span>Home</span>}
+              {!isOpen && <span className="tooltip">Home</span>}
+            </a>
           </li>
           <li>
-            {isOpen ? <><FaUser /> About</> : <FaUser />}
+            <a href="#" className="menu-item">
+              <FaUser />
+              {isOpen && <span>About</span>}
+              {!isOpen && <span className="tooltip">About</span>}
+            </a>
           </li>
           <li>
-            {isOpen ? <><FaLaptopCode /> Services</> : <FaLaptopCode />}
+            <a href="#" className="menu-item">
+              <FaLaptopCode />
+              {isOpen && <span>Services</span>}
+              {!isOpen && <span className="tooltip">Services</span>}
+            </a>
           </li>
           <li>
-            {isOpen ? <><FaChartBar /> Case Studies</> : <FaChartBar />}
+            <a href="#" className="menu-item">
+              <FaChartBar />
+              {isOpen && <span>Case Studies</span>}
+              {!isOpen && <span className="tooltip">Case Studies</span>}
+            </a>
           </li>
           <li>
-            {isOpen ? <><FaBlog /> Blog</> : <FaBlog />}
+            <a href="#" className="menu-item">
+              <FaBlog />
+              {isOpen && <span>Blog</span>}
+              {!isOpen && <span className="tooltip">Blog</span>}
+            </a>
           </li>
           <li>
-            {isOpen ? <><FaEnvelope /> Contact</> : <FaEnvelope />}
+            <a href="#" className="menu-item">
+              <FaEnvelope />
+              {isOpen && <span>Contact</span>}
+              {!isOpen && <span className="tooltip">Contact</span>}
+            </a>
           </li>
         </ul>
         <div className="profile-section">
           <img
             className="profile-picture"
-            src="https://via.placeholder.com/150"
+            src={`${process.env.PUBLIC_URL}/Kavya.JPG`} // Replace with your actual image path
             alt="Profile"
           />
-          <div className="profile-details">
-            <p className="profile-name">John Doe</p>
-            <p className="profile-role">Frontend Developer</p>
-          </div>
+          {isOpen && (
+            <div className="profile-details">
+              <p className="profile-name">Kavya Balla</p>
+              <p className="profile-role">Web Developer</p>
+            </div>
+          )}
         </div>
       </div>
       <div className="content">

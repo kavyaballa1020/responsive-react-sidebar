@@ -3,16 +3,19 @@
 }
 
 .sidebar {
-  width: 250px; /* Initial width of the sidebar */
+  width: 250px;
   height: 100vh;
-  background-color: #333;
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5R6qWLHvgMjxwlGPThnutOtUc0liQqoWZo49KdLrUKp_e5NPZL5iVAbiO9umJvJ_ruD0&usqp=CAU');
   color: #fff;
-  overflow: hidden; /* Ensure content doesn't overflow when collapsed */
-  transition: width 0.3s ease; /* Transition width for smooth animation */
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  transition: width 0.3s ease;
+  position: relative;
 }
 
 .sidebar.collapsed {
-  width: 70px; /* Width when collapsed */
+  width: 70px;
 }
 
 .sidebar-header {
@@ -37,30 +40,46 @@
 }
 
 .sidebar-menu li {
-  padding: 1rem;
-  cursor: pointer;
+  position: relative;
+}
+
+.sidebar-menu li a {
   display: flex;
   align-items: center;
-}
-
-.sidebar-menu li svg {
-  margin-right: 10px;
-}
-
-.sidebar-menu li.icon-only {
-  justify-content: center;
   padding: 1rem;
+  text-decoration: none;
+  color: #fff;
+  transition: background-color 0.3s;
 }
 
-.sidebar-menu li.icon-only svg {
-  margin-right: 0; /* Remove margin for icons */
+.sidebar-menu li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-menu li a .tooltip {
+  display: none;
+}
+
+.sidebar.collapsed .sidebar-menu li a:hover .tooltip {
+  display: block;
+  position: absolute;
+  left: 50%; /* Move the tooltip to the right of the collapsed sidebar */
+  top: 50%;
+  transform: translate(10px, -50%); /* Adjust tooltip position */
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  z-index: 1000;
 }
 
 .profile-section {
   display: flex;
   align-items: center;
   padding: 1rem;
-  border-top: 1px solid #555; /* Example border to separate profile from menu */
+  margin-top: 200px;
+  border-top: 1px solid #ffffff;
 }
 
 .profile-picture {
@@ -78,10 +97,10 @@
 .profile-name {
   font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.1rem;
 }
 
 .profile-role {
   font-size: 1rem;
-  color: #ccc;
+  color: #ffffff;
 }
